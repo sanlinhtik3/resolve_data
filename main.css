@@ -1,0 +1,12 @@
+.char-js {
+    position: relative;
+    height: 40vh;
+    width:80vw;
+}
+
+@media screen and (max-width: 576px) {
+    .char-js {
+        height: 50vh;
+        width: 95vw;
+    }
+}

@@ -6,40 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-  </script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="./main.css">
 </head>
 
 <body>
-  <form id="frm">
-    <label for="product">Product</label>
-    <input type="text" id="product">
-    <label for="price">Price</label>
-    <input type="number" id="price">
-    <label for="quantity">Quantity</label>
-    <input type="number" id="quantity">
-    <button>Calculate</button>
-  </form>
-  <table class="table">
-    <thead>
-      <th>No.</th>
-      <th>Product Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Total</th>
-    </thead>
-    <tbody id="list"></tbody>
-    <tfoot>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td id="total-cost"></td>
-    </tfoot>
-  </table>
-  <div id="container">
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+  <div class="container my-5">
+    <div class="row g-md-5 g-2">
+      <div class="col-lg-4">
+        <div class="card p-3">
+          <h3 class="text-bold">Enter Your Data</h3>
+          <form id="frm">
+            <label class="text-black-50" for="product">Product</label>
+            <input type="text" id="product" class="form-control mb-3">
+            <label class="text-black-50" for="price">Price</label>
+            <input type="number" id="price" class="form-control mb-3">
+            <label class="text-black-50" for="quantity">Quantity</label>
+            <input type="number" id="quantity" class="form-control mb-3">
+            <button class="btn btn-primary form-control">Calculate</button>
+          </form>
+        </div>
+      </div>
+      <div class="col">
+        <div class="table-responsive">
+          <table class="table small">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="list"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">Total</td>
+                <td colspan="2" class="text-end" id="total-cost"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mt-5">
+          <h1>Data</h1>
+          <div class="char-js">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="./main.js"></script>
 </body>

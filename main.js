@@ -92,16 +92,24 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(products_DB.map((apv) => apv.product_name));
 
       let myChart = document.getElementById("myChart").getContext("2d");
+
+      let option = {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+
       let barChart = new Chart(myChart, {
         type: "bar",
+        options: option,
         data: {
           labels: products_DB.map((apv) => apv.product_name),
-          datasets: [
-            {
+          datasets: [{
               label: "Best Seller",
-                data: products_DB.map((apv) => apv.quantity),
-            },
-          ],
+              data: products_DB.map((apv) => apv.quantity),
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            }],
         },
       });
     });
